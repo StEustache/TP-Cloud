@@ -57,3 +57,24 @@ resource azurerm_windows_virtual_machine "windows_machine" {
     environment = var.environment
   }
 }
+
+
+output "windows_password" {
+  value = azurerm_windows_virtual_machine.windows_machine.admin_password
+  sensitive = false
+}
+
+output "windows_username" {
+  value = azurerm_windows_virtual_machine.windows_machine.admin_username
+  sensitive = false
+}
+
+output "linux_password" {
+  value = azurerm_linux_virtual_machine.linux_machine.admin_password
+  sensitive = false
+}
+
+output "linux_username" {
+  value = azurerm_linux_virtual_machine.linux_machine.admin_username
+  sensitive = false
+}
